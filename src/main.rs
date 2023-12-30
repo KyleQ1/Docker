@@ -23,7 +23,7 @@ fn main() -> Result<()> {
         print!("{}", std_out);
         eprint!("{}", std_error);
     } else {
-        std::process::exit(1);
+        std::process::exit(output.status.code().unwrap_or(1));
     }
 
     Ok(())
