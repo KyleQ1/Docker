@@ -20,7 +20,8 @@ fn main() -> Result<()> {
     if output.status.success() {
         let std_out: &str = std::str::from_utf8(&output.stdout)?;
         let std_error: &str = std::str::from_utf8(&output.stderr)?;
-        println!("{}{}", std_out, std_error);
+        print!("{}", std_out);
+        eprint!("{}", std_error);
     } else {
         std::process::exit(1);
     }
